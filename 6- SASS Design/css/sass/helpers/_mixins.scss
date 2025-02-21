@@ -1,0 +1,59 @@
+@mixin breakpoints($point) {
+    @if $point == mobile {
+        @media (max-width: $maxMobile) {
+            @content;
+        }
+    } @else if $point == small {
+        @media #{$smallScreenRange} {
+            @content;
+        }
+    } @else if $point == medium {
+        @media #{$mediumScreenRange} {
+            @content;
+        }
+    } @else if $point == large {
+        @media (min-width: $minLarge) {
+            @content;
+        }
+    } @else {
+        @error '#{$point} Is Not A Screen Size';
+    }
+}
+
+@mixin overlay($color, $opacity) {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba($color, $opacity);
+}
+
+@mixin prefixer($property, $value, $prefixes: all) {
+    @if $prefixes == all {
+        $prefixes: (moz, o, webkit, ms, khtml, apple);
+        #{$property}: $value; 
+        @each $prefix in $prefixes {
+            #{'-' + $prefix + '-' + $property}: $value;
+        }
+    }@else {
+        #{$property}: $value; 
+        @each $prefix in $prefixes {
+            #{'-' + $prefix + '-' + $property}: $value;
+        }
+    }
+}
+
+
+@mixin keyFrame($animationName) {
+    @keyframes #{$animationName} {
+        @content;
+    }
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+}

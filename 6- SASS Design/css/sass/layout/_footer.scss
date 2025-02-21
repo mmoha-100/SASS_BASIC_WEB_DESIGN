@@ -1,0 +1,157 @@
+.footer {
+    background-color: $greyColor;
+    overflow: hidden;
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .gallery,
+    .info,
+    .contact {
+        float: $floatLeft;
+        h4 {
+            font-weight: bold;
+        }
+    }
+    .gallery {
+        width: 48%;
+        margin-#{$floatRight}: 2%;
+        @media (max-width: $maxMedium) {
+            width: 100%;
+            padding-bottom: 1.33em; // User Agent h3 Styling (The Following Element)
+            border-bottom: 1px solid #eee;
+        }
+        .row {
+            &:not(:last-child) {
+                margin-bottom: 40px;
+            }
+            &:last-child {
+                margin-top: 60px;
+            }
+            img {
+                float: $floatLeft;
+                margin-#{$floatRight}: 20px;
+                width: 150px;
+                height: 150px;
+                @media (max-width: $maxMedium) {
+                    max-width: 30%;
+                    height: auto;
+                }
+            }
+            .text {
+                width: 100%;
+                h4 {
+                    text-align: #{$alignLeft};
+                    color: $redColor;
+                    margin: 0;
+                    margin-bottom: 10px;
+                    padding: 15px 0 0;
+                }
+                p {
+                    color: $greyColor2;
+                    line-height: 1.6;
+                    margin: 0;
+                    text-align: $alignLeft;
+                }
+            }
+        }
+    }
+    .info {
+        width: 25%;
+        @media (max-width: $maxMedium) {
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        ul {
+            color: $greyColor2;
+            li {
+                line-height: 1.4;
+                span {
+                    color: $redColor;
+                    font-weight: bold;
+                }
+            }
+        }
+        h4 {
+            color: $greyColor2;
+            margin-bottom: 0;
+        }
+        @media (max-width: $maxMedium) {
+            text-align: center;
+        }
+        p {
+            color: $greyColor2;
+            margin-top: 5px;
+            margin-bottom: 1.33em;
+        }
+    }
+    .contact {
+        width: 25%;
+        @media (max-width: $maxMedium) {
+            h4 {
+                text-align: center;
+            }
+        }
+        input:not([type="submit"]),
+        textarea {
+            outline: none;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            caret-color: $redColor;
+            &::placeholder {
+                opacity: 0.6;
+                font-size: 14px;
+                transition: $transitionDuration;
+            }
+            &:focus::placeholder {
+                opacity: 0;
+            }
+        }
+        input {
+            height: 40px;
+        }
+        @media (max-width: $maxMedium) {
+            input[type="submit"] {
+                margin: 0 auto;
+                display: block;
+            }
+        }
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+    }
+
+    @media (max-width: $maxMedium) {
+        .info,
+        .contact {
+            width: 100%;
+        }
+    }
+
+    .copyright {
+        padding-top: 10px;
+        margin-top: 20px;
+        border-top: 1px solid $greyColor2;
+        overflow: hidden;
+        .text,
+        .author {
+            float: $floatLeft;
+            width: 50%;
+            color: $greyColor2;
+            padding: 5px;
+            @media (max-width: $maxMedium) {
+                width: 100%;
+            }
+        }
+        .text {
+            text-align: $alignLeft;
+        }
+        .author {
+            text-align: $alignRight;
+        }
+    }
+}

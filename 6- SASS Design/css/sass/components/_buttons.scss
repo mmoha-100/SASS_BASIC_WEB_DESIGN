@@ -1,0 +1,80 @@
+.main-btn {
+    background-color: rgba($redColor, 0.8);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    min-width: 120px;
+    @include prefixer(transition, 0.3s, ms webkit o);
+    &:hover {
+        background-color: $redColor;
+    }
+}
+.the-toggler {
+    display: none;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    top: -10px;
+    background-color: #e2494c;
+    cursor: pointer;
+    transition: background-color 0.3sease;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    position: absolute;
+    right: 10px;
+    &:hover {
+        background-color: darken($redColor, 10%);
+    }
+
+    &.active {
+        background-color: lighten($redColor, 20%);
+    }
+
+    span {
+        display: block;
+        height: 4px;
+        width: 100%;
+        background-color: white;
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+
+        &:nth-child(1) {
+            margin-top: 0;
+        }
+
+        &:nth-child(2) {
+            top: 8px;
+            margin: 6px 0;
+        }
+
+        &:nth-child(3) {
+            top: 16px;
+            margin-bottom: 0;
+        }
+    }
+
+    &.active span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    &.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    &.active span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+    @media (max-width: 767px) {
+        display: block;
+    }
+}

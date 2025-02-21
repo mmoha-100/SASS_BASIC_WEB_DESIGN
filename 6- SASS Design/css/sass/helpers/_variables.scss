@@ -1,0 +1,34 @@
+// Start Screens Breakpoints
+$maxMobile: 767px;
+
+$minSmall: 768px;
+$maxSmall: 991px;
+
+$minMedium: 992px;
+$maxMedium: 1170px;
+
+$minLarge: 1200px;
+
+$smallScreenRange: "(min-width: #{$minSmall}) and (max-width: #{$maxSmall})";
+$mediumScreenRange: "(min-width: #{$minMedium}) and (max-width: #{$maxMedium})";
+// End Screens Breakpoints
+
+// Start Colors
+$redColor: #e2494c;
+$greyColor: #d9d9d9;
+$greyColor2: #888;
+// End Colors
+
+// Start Directions
+$floatLeft: left;
+$floatRight: right;
+// End Directions
+
+// Start Text Alignment
+$alignLeft: left;
+$alignRight: right;
+// End Text Alignment
+
+// Start Duration
+$transitionDuration: 0.5s;
+// End Duration

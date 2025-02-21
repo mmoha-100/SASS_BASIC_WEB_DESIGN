@@ -1,0 +1,13 @@
+* {
+    @include prefixer(box-sizing, border-box, webkit moz);
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+}

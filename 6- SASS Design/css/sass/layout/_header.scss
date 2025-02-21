@@ -1,0 +1,73 @@
+.header {
+    padding: 20px 0;
+    border-bottom: 1px solid $greyColor;
+    overflow: hidden;
+    position: relative;
+    cursor: default;
+    .logo {
+        width: 30%;
+        float: $floatLeft;
+
+        @include breakpoints(mobile) {
+            float: none;
+            width: 100%;
+            text-align: center;
+        }
+        @include breakpoints(small) {
+            float: none;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 0;
+            margin-top: 10px;
+        }
+        p {
+            color: #9d9d9d;
+        }
+    }
+    .navbar {
+        width: 70%;
+        float: $floatRight;
+        background-color: $redColor;
+        border-radius: 15px;
+        overflow: hidden;
+        @include breakpoints(mobile) {
+            float: none;
+            overflow: hidden;
+            margin: auto;
+            width: 100%;
+            border-radius: 6px;
+        }
+        @include breakpoints(small) {
+            width: 100%;
+            float: none;
+            margin-top: 30px;
+        }
+        li {
+            width: 20%;
+            float: $floatLeft;
+            font-size: 20px;
+            text-align: center;
+            a {
+                display: block;
+                padding: 20px 10px;
+                color: white;
+                text-decoration: none;
+                &:hover {
+                    color: #ddd;
+                }
+                @include breakpoints(mobile) {
+                    text-align: center;
+                    font-size: 15px;
+                }
+            }
+            @include breakpoints(mobile) {
+                float: none;
+                overflow: hidden;
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+}

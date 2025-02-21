@@ -1,0 +1,193 @@
+// Start Slider
+.slider {
+    blockquote {
+        font: {
+            size: 16px;
+            style: italic;
+            weight: 600;
+            family: Tahoma, Arial;
+        }
+        line-height: 1.7;
+        text-align: center;
+        color: #999;
+        width: 80%;
+        margin: 30px auto;
+    }
+    img {
+        max-width: 100%;
+        border: 2px solid $redColor;
+    }
+    .slider-bullets {
+        text-align: center;
+        cursor: default;
+        li {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: relative;
+            background-color: $greyColor;
+            border: 2px solid $greyColor;
+            @include prefixer(transition, $transitionDuration, moz ms o);
+            &.active,
+            &:hover {
+                border: 2px solid #333;
+                cursor: pointer;
+            }
+        }
+    }
+}
+// End Slider
+
+// Start Our Services:
+.service {
+    float: $floatLeft;
+    width: 32%;
+    @media (max-width: $maxMobile) {
+        width: 100%;
+        float: none;
+    }
+    &.middle {
+        margin-#{$floatLeft}: 1.9995%;
+        margin-#{$floatRight}: 1.9995%;
+        @media (max-width: $maxMobile) {
+            margin: 0;
+        }
+    }
+    h3 {
+        color: #333;
+        display: flex;
+        align-items: center;
+        @media (max-width: $maxMobile) {
+            width: 100%;
+            float: none;
+            flex-direction: column;
+        }
+        svg {
+            margin-#{$floatRight}: 10px;
+            font-size: 20px;
+            @media (max-width: $maxMobile) {
+                display: block;
+                color: $redColor;
+                margin: 25px 0 4px;
+            }
+        }
+    }
+    p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #777;
+    }
+    a {
+        text-decoration: none;
+        color: $redColor;
+        font-weight: bold;
+        svg {
+            margin-#{$floatLeft}: 10px;
+        }
+    }
+    &:hover a svg {
+        animation: moveRight 0.3s alternate infinite;
+    }
+}
+// End Our Services
+
+// Start Our Players
+.player {
+    // Because Of That I Love SASS => Dynamism <=
+    $playersNumberOnRow: 5;
+    $marginBetweenBoxes: 2%;
+    $playerBoxWidth: getBoxWidth($marginBetweenBoxes, $playersNumberOnRow);
+    $marginRight: getMarginRight($marginBetweenBoxes, $playersNumberOnRow);
+
+    float: $floatLeft;
+    width: $playerBoxWidth;
+
+    @media (max-width: $maxMobile) {
+        width: 50%;
+        float: $floatLeft;
+        margin: 0 !important;
+        margin-bottom: 40px !important;
+        padding: 20px;
+        h3 {
+            font-size: 17px;
+        }
+    }
+    @media (max-width: $maxMedium) {
+        width: 80%;
+        margin: 0 auto 40px !important;
+        float: none;
+        padding: 20px;
+        h3 {
+            font-size: 18px;
+        }
+    }
+
+    img {
+        width: 100%;
+        margin: 0 auto;
+    }
+    &:not(:nth-child(#{$playersNumberOnRow + 1})) {
+        margin-#{$floatRight}: $marginRight;
+    }
+    h3 {
+        color: #333;
+        display: flex;
+        align-items: #{$floatLeft};
+        font-weight: normal;
+        width: fit-content;
+        margin: 20px auto;
+        font-size: 17px;
+        border-bottom: 2px solid $redColor;
+        padding-bottom: 5px;
+
+        span {
+            margin-#{$floatRight}: 5px;
+            font-weight: bold;
+        }
+        @media (max-width: $maxMobile) {
+            color: #333;
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            width: fit-content;
+            margin: 10px auto;
+        }
+    }
+    p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #777;
+    }
+    a {
+        text-decoration: none;
+        color: $redColor;
+        font-weight: bold;
+        svg {
+            margin-#{$floatLeft}: 10px;
+        }
+    }
+    &:hover a svg {
+        animation: moveRight 0.3s alternate infinite;
+    }
+}
+// End Our Players
+
+// // Start Our Works
+.our-works {
+    img {
+        $worksNumber: 3;
+        $marginBetweenBoxes: 2%;
+        $playerBoxWidth: getBoxWidth($marginBetweenBoxes, $worksNumber);
+        $marginRight: getMarginRight($marginBetweenBoxes, $worksNumber);
+
+        float: $floatLeft;
+        width: $playerBoxWidth;
+        max-width: 100%;
+
+        &:not(:last-child) {
+            margin-#{$floatRight}: $marginRight;
+        }
+    }
+}
+// End Our Works

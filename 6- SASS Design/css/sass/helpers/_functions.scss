@@ -1,0 +1,6 @@
+@function getBoxWidth($marginBetweenBox, $boxesNumberOnRow) {
+    @return (100% - $marginBetweenBox * $boxesNumberOnRow) / $boxesNumberOnRow;
+}
+@function getMarginRight($marginBetweenBox, $boxesNumberOnRow) {
+    @return $marginBetweenBox * $boxesNumberOnRow / ($boxesNumberOnRow - 1);
+}
